@@ -15,8 +15,13 @@ public class SaveDriverUseCase implements ISaveDriver{
     @Override
     @Transactional
     public Driver save(Driver driver) {
-        Driver savedDriver = (Driver) registerRepository.save(driver);
-        return savedDriver;
+        try {
+            Driver savedDriver = (Driver) registerRepository.save(driver);
+            return savedDriver;
+        } catch (Exception e) {
+            throw e;
+        }
+        
     }
 
     

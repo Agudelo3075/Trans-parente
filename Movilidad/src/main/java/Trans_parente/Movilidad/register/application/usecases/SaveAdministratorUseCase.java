@@ -16,7 +16,11 @@ public class SaveAdministratorUseCase implements IsaveAdministrator{
     @Override
     @Transactional
     public Administrator save(Administrator administrator) {
-        Administrator savedAdministrator = (Administrator) registerRepository.save(administrator);
-        return savedAdministrator;
+        try {
+            Administrator savedAdministrator = (Administrator) registerRepository.save(administrator);
+            return savedAdministrator;   
+        } catch (Exception e) {
+            throw e;
+        }
     }
 }
