@@ -19,7 +19,7 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @PrimaryKeyJoinColumn(name = "id")
 
-public class AdministratorEntity {
+public class AdministratorEntity extends UserEntity{
     
     @Column(name = "codigo", nullable = false)
     private String codigo;
