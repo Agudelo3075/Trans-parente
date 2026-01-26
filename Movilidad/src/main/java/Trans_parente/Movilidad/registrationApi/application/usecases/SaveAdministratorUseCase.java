@@ -1,11 +1,10 @@
-package Trans_parente.Movilidad.register.application.usecases;
+package Trans_parente.Movilidad.registrationApi.application.usecases;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import Trans_parente.Movilidad.register.domain.models.Administrator;
-import Trans_parente.Movilidad.register.domain.ports.in.IsaveAdministrator;
-import Trans_parente.Movilidad.register.domain.ports.out.IRegisterRepository;
+import Trans_parente.Movilidad.registrationApi.domain.models.Administrator;
+import Trans_parente.Movilidad.registrationApi.domain.ports.in.IsaveAdministrator;
+import Trans_parente.Movilidad.registrationApi.domain.ports.out.IRegisterRepository;
 import lombok.RequiredArgsConstructor;
 
 @Service

@@ -1,4 +1,4 @@
-package Trans_parente.Movilidad.register.domain.models;
+package Trans_parente.Movilidad.registrationApi.domain.models;
 
 public class User {
     protected Long id;
