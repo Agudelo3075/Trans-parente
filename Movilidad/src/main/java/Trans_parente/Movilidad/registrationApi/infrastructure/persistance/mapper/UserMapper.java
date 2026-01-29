@@ -45,4 +45,35 @@ public class UserMapper {
             throw e;
         }
     }
+
+    public UserEntity toEntity(User user){
+        try {
+            if(user instanceof Driver){
+                DriverEntity entity = new DriverEntity();
+                mapCommonFields(user, entity);
+                entity.setConfiablidad(((Driver) user).getConfiabilidad());
+                return entity;
+            }else if(user instanceof Administrator){
+                AdministratorEntity entity = new AdministratorEntity();
+                entity.setCodigo(((Administrator) user).getCodigo());
+                return entity;
+            }
+            throw new IllegalArgumentException("Unknown user type");
+            
+        } catch (Exception e) {
+            throw e;
+        }
+    }
+
+    private void mapCommonFields(User domain, UserEntity entity){
+        try {
+            entity.setId(domain.getId());
+            entity.setName(domain.getName());
+            entity.setEmail(domain.getEmail());
+            entity.setPassword(domain.getPassword());
+            entity.setLocation(domain.getLocation());
+        } catch (Exception e) {
+            throw e;
+        }
+    }
 }
